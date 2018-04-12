@@ -1,0 +1,35 @@
+[
+  {
+    "name": "locust-slave",
+    "image": "${image}",
+    "memory": 1536,
+    "portMappings": [    
+      {
+        "containerPort": 5557,
+        "hostPort": 5557
+      },
+      {
+        "containerPort": 5558,
+        "hostPort": 5558
+      }
+    ],
+    "environment": [
+        {
+        "name": "TARGET_URL",
+        "value": "${target_url}"
+        },
+        {
+        "name": "MASTER_HOST",
+        "value": "${master_host}"
+        },
+        {
+        "name": "TARGET_PORT",
+        "value": "${target_port}"
+        },
+        {
+          "name": "LOCUST_MODE",
+          "value": "slave"
+        }
+    ]
+  }
+]

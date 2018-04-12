@@ -1,0 +1,35 @@
+[
+  {
+    "name": "locust-master",
+    "image": "${image}",
+    "memory": 1536,
+    "portMappings": [
+      {
+        "containerPort": ${docker_port},
+        "hostPort": ${host_port}
+      },
+      {
+        "containerPort": 5557,
+        "hostPort": 5557
+      },
+      {
+        "containerPort": 5558,
+        "hostPort": 5558
+      }
+    ],
+    "environment": [
+        {
+          "name": "TARGET_URL",
+          "value": "${target_url}"
+        },        
+        {
+          "name": "TARGET_PORT",
+          "value": "${target_port}"
+        },
+        {
+          "name": "LOCUST_MODE",
+          "value": "master"
+        }
+    ]
+  }
+]

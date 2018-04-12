@@ -1,0 +1,16 @@
+version: '3'
+networks:
+  locustnetwork:
+    driver: bridge    
+services:
+  locust_master:
+    build: .
+    image: locust:8.0
+    container_name: locust-master
+    ports:
+     - "8089:8089"
+    networks:
+      - locustnetwork    
+    environment:
+     LOCUST_MODE: 'standalone'
+     TARGET_URL: '${TARGET_URL}'
