@@ -28,7 +28,7 @@ To make sure your new TaskSet is running, locate /test-scenarios/locustfile.py, 
 name of your TaskSet class
 
 ```python
-class HydraBehavior(TaskSet):
+class LocustBehavior(TaskSet):
     tasks = [<put_your_class_name_here>]
 ```
 
@@ -68,9 +68,9 @@ More information can be found in official locust [documentation](https://docs.lo
 Check README in **locust-aws-ecs** folder
 
 ## How to start or stop Test Tasks
-see usage of ```run-swarm.py```
- * **start** -> ```run-swarm.py --action start```
- * **stop** -> ```run-swarm.py --action stop```
+see usage of ```locust-rest-api-commands.py```
+ * **start** -> ```locust-rest-api-commands.py --action start```
+ * **stop** -> ```locust-rest-api-commands.py --action stop```
 
 ## How to control load
 Load applied to server is controlled by increasing/decreasing number for **locust_ccount** & **hatch_rate**.
@@ -78,7 +78,7 @@ Load applied to server is controlled by increasing/decreasing number for **locus
 to see what locust_count & hatch_rate are and how they are use see [locust doc](http://docs.locust.io/en/stable/writing-a-locustfile.html?highlight=hatch) or ```$locust --help``` 
 
 ## Retrieve results
-Use ```run-swarm.py --action results```, all files are placed under **results** folder and in subfolder which represents time script was executed(seconds)
+Use ```locust-rest-api-commands.py --action results```, all files are placed under **results** folder and in sub folder which represents time script was executed(seconds)
 
 ## Test data
 To generate test data take a look at README in /test-data folder
